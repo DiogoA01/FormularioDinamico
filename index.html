@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Titillium+Web:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Formulário dinâmico</title>
+  </head>
+  <body>
+    <main id="app">
+      <form>
+        <div class="step-progress">
+          <strong class="active" date-step>Contato</strong>
+          <svg
+            width="8"
+            height="14"
+            viewBox="0 0 8 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.41663 2L6.41663 7L1.41663 12"
+              stroke="#323238"
+              stroke-width="2"
+              stroke-linecap="square"
+            />
+          </svg>
+
+          <strong date-step>Empresa</strong>
+          <svg
+            width="8"
+            height="14"
+            viewBox="0 0 8 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.41663 2L6.41663 7L1.41663 12"
+              stroke="#323238"
+              stroke-width="2"
+              stroke-linecap="square"
+            />
+          </svg>
+
+          <strong date-step>Projeto</strong>
+          <svg
+            width="8"
+            height="14"
+            viewBox="0 0 8 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.41663 2L6.41663 7L1.41663 12"
+              stroke="#323238"
+              stroke-width="2"
+              stroke-linecap="square"
+            />
+          </svg>
+        </div>
+
+        <div class="form-step active">
+          <div class="content">
+            <div class="input-wrapper">
+              <label for="name">Nome</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Como prefere ser chamado"
+                required
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="name">Telefone</label>
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="Digite seu número de WhatsApp"
+                onkeypress="return /\d/.test(event.key)"
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="name">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu e-mail"
+                required
+              />
+            </div>
+          </div>
+          <div class="button-wrapper justify-end">
+            <button class="btn primary" type="button" data-action="next">
+              CONTINUAR
+            </button>
+          </div>
+
+          <!--formulário 2-->
+        </div>
+        <div class="form-step hide">
+          <div class="content">
+            <div class="input-wrapper">
+              <label for="business-name">Nome da empresa</label>
+              <input
+                type="text"
+                id="business-name"
+                name="business-name"
+                placeholder="Qual é o nome da empresa"
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="name">Número de funcionarios</label>
+              <input
+                type="text"
+                id="business-colab-number"
+                name="business-colab-number"
+                placeholder="Digite o número de colaboradores"
+                onkeypress="return /\d/.test(event.key)"
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="business-about">Sobre seu negócio</label>
+              <textarea
+                id="business-about"
+                name="business-about"
+                placeholder="Fale um pouco sobre os seus produtos e serviços"
+              ></textarea>
+            </div>
+          </div>
+          <div class="button-wrapper">
+            <button class="btn secondary" type="button" data-action="prev">
+              VOLTAR
+            </button>
+            <button class="btn primary" type="button" data-action="next">
+              CONTINUAR
+            </button>
+          </div>
+        </div>
+
+        <!--formulário 3-->
+        <div class="form-step hide">
+          <div class="content">
+            <div class="input-wrapper">
+              <label for="projetc">Objetivos do projeto</label>
+              <textarea
+                id="projetc"
+                name="projetc"
+                placeholder="Descreva quais objetivos deste projeto"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="button-wrapper">
+            <button class="btn secondary" type="button" data-action="prev">
+              VOLTAR
+            </button>
+            <button class="btn primary" type="submit" data-action="next">
+              Enviar resposta
+            </button>
+          </div>
+        </div>
+      </form>
+    </main>
+    <script src="/index.js"></script>
+  </body>
+</html>
